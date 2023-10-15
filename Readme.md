@@ -35,7 +35,7 @@ suppressWarnings(
         gamma_vals = c(1, 0.5, 0.1), 
         c_vals = c(0, 5), 
         type = 'geom', 
-        PP = 5, 
+        PP = 6, 
         h = 1, 
         T_ = 1, 
         case = 'LIFO'
@@ -57,7 +57,9 @@ suppressWarnings(
         type = 'poi', 
         PP = 5, 
         h = 1, 
-        T_ = 1, 
+        T_ = 1,
+        m = 1,
+        L = 1,
         CASE = 'Back'
     )
 )
