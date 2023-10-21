@@ -24,7 +24,7 @@ suppressWarnings(
         type = 'poi', 
         PP = 5, 
         h = 1, 
-        T_ = 1000
+        T_ = 100
     )
 )
 
@@ -37,7 +37,7 @@ suppressWarnings(
         type = 'geom', 
         PP = 6, 
         h = 1, 
-        T_ = 1, 
+        T_ = 100, 
         case = 'LIFO'
     )
 )
@@ -57,12 +57,13 @@ suppressWarnings(
         type = 'poi', 
         PP = 5, 
         h = 1, 
-        T_ = 1,
+        T_ = 100,
         m = 1,
         L = 1,
         CASE = 'Back'
     )
 )
+
 ```
 
 ### Explanation of Parameters
