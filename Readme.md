@@ -10,6 +10,13 @@ Ensure you have R and necessary libraries installed. You may need to install add
 
 ### Code Example
 
+```r
+source('new.R')
+# OR
+source('optimal_n.R')
+start_time = Sys.Date()
+```
+
 #### Lost-sales
 
 In lost-sales scenarios, we assess situations where missed sales opportunities incur a cost or penalty. Example code snippet is provided below.
@@ -41,6 +48,7 @@ suppressWarnings(
         case = 'LIFO'
     )
 )
+
 ```
 
 #### Backlogging
@@ -63,6 +71,27 @@ suppressWarnings(
         CASE = 'Back'
     )
 )
+
+```
+
+### Optimal n
+```r
+# Assuming compute_cost returns a numeric value
+results <- data.frame(m=integer(), n=integer(), type=character(), gamma=numeric(), cost=numeric(), stringsAsFactors = FALSE)
+
+for(m in c(3, 4, 5)) {
+  for(n in c(1, 3, 5)) {
+    for(type in c('poi', 'geom')) {
+      for(gamma in c(0.1, 0.5)){
+        cost <- test_n(m=m, n=n, type=type, gamma=gamma)
+        result <- data.frame(m=m, n=n, type=type, gamma=gamma, cost=cost)
+        results <- rbind(results, result)
+      }
+    }
+  }
+}
+
+write.csv(results, "gamma_simulation_results.csv", row.names = FALSE)
 
 ```
 
